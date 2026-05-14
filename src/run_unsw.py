@@ -356,6 +356,7 @@ def main(mode="all"):
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
+        from matplotlib.patches import Rectangle
 
         print("\n=== CONFUSION MATRIX ===")
         n_classes = 4
@@ -374,6 +375,9 @@ def main(mode="all"):
         ax.set_xticklabels(CLASS_NAMES, fontsize=9); ax.set_yticklabels(CLASS_NAMES, fontsize=9)
         ax.set_xlabel("Predicted Severity", fontsize=10); ax.set_ylabel("True Severity", fontsize=10)
         ax.set_title("ARAT Confusion Matrix", fontsize=11)
+        # Red box highlighting the High-severity row (safety-critical class)
+        rect = Rectangle((-0.5, 2.5), n_classes, 1, linewidth=2.5, edgecolor='red', facecolor='none')
+        ax.add_patch(rect)
         plt.colorbar(im, ax=ax, fraction=0.046)
         plt.tight_layout()
         plt.savefig(FIG_DIR / "confusion_matrix.pdf", bbox_inches="tight")
