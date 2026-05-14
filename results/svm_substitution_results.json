@@ -1,0 +1,32 @@
+{
+  "unsw_nb15": {
+    "dataset": "UNSW-NB15",
+    "n_train": 175341,
+    "n_test": 82332,
+    "svm_train_subsample": 30000,
+    "baseline_rf_knn": {
+      "exact": 0.7935,
+      "under": 0.0218,
+      "adj": 0.9782,
+      "hi_recall": 0.7441,
+      "phi": 0.6117,
+      "disagree_rate": 0.1375
+    },
+    "substitution_rf_svm": {
+      "exact": 0.7292,
+      "under": 0.0154,
+      "adj": 0.9846,
+      "hi_recall": 0.7251,
+      "phi": 0.518,
+      "disagree_rate": 0.2307
+    },
+    "delta": {
+      "exact": -0.0643,
+      "under": -0.0064,
+      "adj": 0.0064,
+      "hi_recall": -0.019,
+      "phi": -0.0937,
+      "disagree_rate": 0.0932
+    }
+  }
+}

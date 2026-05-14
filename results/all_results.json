@@ -1,0 +1,95 @@
+{
+  "dataset": {
+    "train_n": 175341,
+    "test_n": 82332,
+    "features": 30
+  },
+  "table1": {
+    "RF only": {
+      "exact": 0.8074,
+      "under": 0.0376,
+      "adj": 0.9624,
+      "hi_recall": 0.7227
+    },
+    "kNN only": {
+      "exact": 0.8032,
+      "under": 0.061,
+      "adj": 0.939,
+      "hi_recall": 0.2559
+    },
+    "Soft vote": {
+      "exact": 0.8077,
+      "under": 0.048,
+      "adj": 0.952,
+      "hi_recall": 0.5095
+    },
+    "Cons. majority": {
+      "exact": 0.7935,
+      "under": 0.0218,
+      "adj": 0.9782,
+      "hi_recall": 0.7441
+    },
+    "ARAT-A": {
+      "exact": 0.7935,
+      "under": 0.0218,
+      "adj": 0.9782,
+      "hi_recall": 0.7441
+    },
+    "ARAT-B": {
+      "exact": 0.7359,
+      "under": 0.017,
+      "adj": 0.983,
+      "hi_recall": 0.7441
+    },
+    "ARAT-B (auto)": {
+      "exact": 0.7844,
+      "under": 0.0175,
+      "adj": 0.9825,
+      "hi_recall": 0.7476,
+      "n": 76742,
+      "coverage": 0.9321,
+      "cp95_adj_lo": 0.9816,
+      "cp95_adj_hi": 0.9834
+    }
+  },
+  "table2": {
+    "p_rf_wrong": 0.1926,
+    "p_knn_wrong": 0.1968,
+    "p_both_wrong": 0.1338,
+    "expected_indep": 0.0379,
+    "inflation": 3.53,
+    "phi": 0.6117,
+    "errors_agree": 9722,
+    "total_errors": 17000,
+    "err_agree_pct": 0.5719,
+    "under_agree": 1625,
+    "total_under": 1793,
+    "under_agree_pct": 0.9063
+  },
+  "confidence_intervals": {
+    "arat_a_adj_cp95": [
+      0.9772,
+      0.9792
+    ],
+    "arat_b_adj_cp95": [
+      0.9821,
+      0.9839
+    ],
+    "arat_a_hi_cp95": [
+      0.6996,
+      0.7851
+    ],
+    "arat_b_hi_cp95": [
+      0.6996,
+      0.7851
+    ],
+    "phi_bca": [
+      0.6049,
+      0.6185
+    ],
+    "arat_b_auto_adj_cp95": [
+      0.9816,
+      0.9834
+    ]
+  }
+}

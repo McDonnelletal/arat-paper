@@ -1,0 +1,98 @@
+{
+  "dataset": {
+    "name": "Diabetes 130-US Hospitals",
+    "uci_id": 296,
+    "train_n": 81412,
+    "test_n": 20354,
+    "features": 21,
+    "n_classes": 3,
+    "class_names": [
+      "No readmission",
+      ">30 days",
+      "<30 days"
+    ],
+    "dangerous_class": 2
+  },
+  "models": {
+    "rf": {
+      "n_estimators": 500,
+      "max_depth": 15,
+      "min_samples_leaf": 5,
+      "class_weight": "balanced"
+    },
+    "knn": {
+      "n_neighbors": 5
+    }
+  },
+  "table1": {
+    "RF only": {
+      "exact": 0.4872,
+      "under": 0.158,
+      "adj": 0.842,
+      "hi_recall": 0.2723
+    },
+    "kNN only": {
+      "exact": 0.5371,
+      "under": 0.2607,
+      "adj": 0.7393,
+      "hi_recall": 0.0388
+    },
+    "Soft vote": {
+      "exact": 0.5236,
+      "under": 0.2206,
+      "adj": 0.7794,
+      "hi_recall": 0.0928
+    },
+    "Cons. majority": {
+      "exact": 0.4449,
+      "under": 0.1383,
+      "adj": 0.8617,
+      "hi_recall": 0.2801
+    },
+    "ARAT-A": {
+      "exact": 0.4449,
+      "under": 0.1383,
+      "adj": 0.8617,
+      "hi_recall": 0.2801
+    },
+    "ARAT-B": {
+      "exact": 0.253,
+      "under": 0.0766,
+      "adj": 0.9234,
+      "hi_recall": 0.2801
+    }
+  },
+  "table2": {
+    "p_rf_wrong": 0.5128,
+    "p_knn_wrong": 0.4629,
+    "p_both_wrong": 0.308,
+    "expected_indep": 0.2374,
+    "inflation": 1.3,
+    "phi": 0.2834,
+    "errors_agree": 4436,
+    "total_errors": 11298,
+    "err_agree_pct": 0.3926,
+    "under_agree": 2256,
+    "total_under": 2815,
+    "under_agree_pct": 0.8014,
+    "disagree_rate": 0.4497
+  },
+  "escalation_meta": {
+    "auroc_under_pred": 0.727,
+    "note": "LR meta-model, 9 routing features, in-sample evaluation"
+  },
+  "confidence_intervals": {
+    "arat_a_adj_cp95": [
+      0.8568791346834144,
+      0.8664131944366243
+    ],
+    "arat_b_adj_cp95": [
+      0.9196165712657364,
+      0.9269751427269379
+    ],
+    "arat_b_auto_adj_cp95": [
+      0.9158,
+      0.925
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+metric,v1,v2
+rf_exact,0.8027,0.8074
+arat_exact,0.7837,0.7935
+under,0.0183,0.0218
+adj,0.9817,0.9782
+hi_recall,0.7251,0.7441
+phi,0.5835,0.6117
+disagree,0.1531,0.1375
+err_agree,0.5546,0.5719
+under_agree,0.9062,0.9063

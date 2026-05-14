@@ -1,0 +1,2 @@
+p_rf_wrong,p_knn_wrong,p_both_wrong,expected_indep,inflation,phi,errors_agree,total_errors,err_agree_pct,under_agree,total_under,under_agree_pct
+0.1926,0.1968,0.1338,0.0379,3.53,0.6117,9722,17000,0.5719,1625,1793,0.9063
