@@ -1,0 +1,7 @@
+metric,lower,upper
+arat_a_adj_cp95,0.9772,0.9792
+arat_b_adj_cp95,0.9821,0.9839
+arat_a_hi_cp95,0.6996,0.7851
+arat_b_hi_cp95,0.6996,0.7851
+phi_bca,0.6049,0.6185
+arat_b_auto_adj_cp95,0.9816,0.9834

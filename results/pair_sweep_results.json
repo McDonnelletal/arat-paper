@@ -1,0 +1,66 @@
+{
+  "dataset": "UNSW-NB15",
+  "n_test": 82332,
+  "seed": 42,
+  "svm_train_subsample": 30000,
+  "agent_accuracy": {
+    "RF": 0.8073,
+    "kNN": 0.8042,
+    "SVM": 0.685,
+    "XGB": 0.8005,
+    "LGB": 0.8059
+  },
+  "note": "ARAT under = override-only (routing-layer, pre safety-flag); full RF+kNN with unanimous-Normal flag reaches 1.70% (Table 1). The paper's Table 3 RF+k-NN (main) row cites the MAIN-RUN artifacts (phi 0.612 / 13.8% / 4.80% / 2.18% / +2.62pp; table2_error_dependence.csv, baselines_full_comparison.csv, svm_substitution_results.json) for cross-table consistency; this sweep's re-run of that pair differs in the third decimal (environment drift between otherwise identical runs).",
+  "pairs": {
+    "RF+kNN": {
+      "phi": 0.6095,
+      "disagree_rate": 0.1377,
+      "under_soft": 0.0476,
+      "under_override": 0.0222,
+      "exact_override": 0.7937,
+      "hi_recall_override": 0.7607,
+      "reduction_pp": 2.54,
+      "productive": true
+    },
+    "RF+XGB": {
+      "phi": 0.7439,
+      "disagree_rate": 0.0875,
+      "under_soft": 0.0474,
+      "under_override": 0.0263,
+      "exact_override": 0.7964,
+      "hi_recall_override": 0.8839,
+      "reduction_pp": 2.11,
+      "productive": true
+    },
+    "RF+LGB": {
+      "phi": 0.812,
+      "disagree_rate": 0.0643,
+      "under_soft": 0.0406,
+      "under_override": 0.0295,
+      "exact_override": 0.798,
+      "hi_recall_override": 0.8365,
+      "reduction_pp": 1.11,
+      "productive": true
+    },
+    "RF+SVM": {
+      "phi": 0.5173,
+      "disagree_rate": 0.2308,
+      "under_soft": 0.0325,
+      "under_override": 0.0153,
+      "exact_override": 0.7294,
+      "hi_recall_override": 0.7133,
+      "reduction_pp": 1.72,
+      "productive": true
+    },
+    "kNN+SVM": {
+      "phi": 0.4989,
+      "disagree_rate": 0.2458,
+      "under_soft": 0.0426,
+      "under_override": 0.0223,
+      "exact_override": 0.7222,
+      "hi_recall_override": 0.8223,
+      "reduction_pp": 2.03,
+      "productive": true
+    }
+  }
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.ipynb_checkpoints/
+.venv/
+data/**/*.csv
+data/**/*.zip
+# Diabetes 130-US Hospitals (UCI 296) is CC BY -- ship the pre-encoded 21-feature split
+!data/diabetes/diabetes_train.csv
+!data/diabetes/diabetes_test.csv

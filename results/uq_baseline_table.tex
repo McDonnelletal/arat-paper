@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4.5pt}
+\caption{Single-model uncertainty quantification versus ARAT at matched review budgets on UNSW-NB15. Each UQ method escalates its most-uncertain cases to human review; residual under-prediction is over the full test set (escalated cases assumed resolved, comparable to ARAT's 1.70\%) and recall is the fraction of the model's under-predictions the escalation captures. At the 6.79\% budget no single-model UQ matches ARAT's 1.70\% residual under-prediction, because confident correlated errors carry low uncertainty and are escalated last; ARAT's deterministic override removes them without spending review budget.}
+\label{tab:uq}
+\begin{tabular}{lccccc}
+\toprule
+& & \multicolumn{2}{c}{Budget $6.79\%$} & \multicolumn{2}{c}{Budget $15\%$} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Method & Base under & Resid.\ under & Recall & Resid.\ under & Recall \\
+\midrule
+RF + MSP selective & 3.80\% & 2.59\% & 31.9\% & 1.68\% & 55.8\% \\
+LightGBM + MSP selective & 4.32\% & 3.30\% & 23.5\% & 2.42\% & 43.9\% \\
+RF + split-conformal (APS) & 3.27\% & 2.25\% & 31.0\% & 1.53\% & 53.2\% \\
+\midrule
+% ARAT recall cells and the 15%-budget residual under use run_unsw.py's held-out
+% router protocol (3-seed means; "escalation" section of all_results.json).
+ARAT (full routing) & 4.80\% & \textbf{1.70\%} & \textbf{74.5\%} & \textbf{0.21\%} & \textbf{94.3\%} \\
+\bottomrule
+\end{tabular}
+\end{table}

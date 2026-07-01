@@ -1,0 +1,31 @@
+{
+  "dataset": {
+    "name": "Diabetes 130-US Hospitals",
+    "uci_id": 296,
+    "train_n": 81412,
+    "test_n": 20354,
+    "features": 21,
+    "n_classes": 3
+  },
+  "config": {
+    "rf_n_estimators": 100,
+    "rf_max_depth": 15,
+    "rf_min_samples_leaf": 5,
+    "rf_class_weight": "balanced",
+    "knn_k": 5,
+    "seed": 42
+  },
+  "metrics": {
+    "rf_exact": 0.48324653630735975,
+    "arat_under": 0.13697553306475385,
+    "dang_recall": 0.2861098292570374,
+    "phi": 0.2793335527050464,
+    "disagree_rate": 0.45308047558219516,
+    "err_agree_pct": 0.3897977132805629,
+    "under_agree_pct": 0.7966284074605452,
+    "total_errors": 11370.0,
+    "errors_agree": 4432.0,
+    "total_under": 2788.0,
+    "under_agree": 2221.0
+  }
+}

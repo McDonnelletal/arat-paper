@@ -1,0 +1,73 @@
+{
+  "dataset": "UNSW-NB15",
+  "n_test": 82332,
+  "seed": 42,
+  "arat_reference": {
+    "softvote_under": 0.048,
+    "under_at_6.79pct": 0.017,
+    "recall_at_6.79pct": 0.745,
+    "under_at_15pct": 0.0021,
+    "recall_at_15pct": 0.9432,
+    "note": "recall cells and under_at_15pct from run_unsw.py's held-out escalation block (3-seed means; escalation section of all_results.json); under_at_15pct = full routing (override + mandatory flag + router top-up to 15%), escalated assumed resolved -- same semantics as the UQ baselines' residual-under column."
+  },
+  "methods": {
+    "RF + MSP selective": {
+      "base_under": 0.038,
+      "total_under": 3131,
+      "budgets": {
+        "0.0679": {
+          "budget": 0.0679,
+          "n_escalated": 5590,
+          "residual_under": 0.0259,
+          "dangerous_recall": 0.3187
+        },
+        "0.1500": {
+          "budget": 0.15,
+          "n_escalated": 12350,
+          "residual_under": 0.0168,
+          "dangerous_recall": 0.5576
+        }
+      }
+    },
+    "LightGBM + MSP selective": {
+      "base_under": 0.0432,
+      "total_under": 3557,
+      "budgets": {
+        "0.0679": {
+          "budget": 0.0679,
+          "n_escalated": 5590,
+          "residual_under": 0.033,
+          "dangerous_recall": 0.235
+        },
+        "0.1500": {
+          "budget": 0.15,
+          "n_escalated": 12350,
+          "residual_under": 0.0242,
+          "dangerous_recall": 0.4391
+        }
+      }
+    },
+    "RF + split-conformal (APS)": {
+      "base_under": 0.0327,
+      "total_under": 2689,
+      "budgets": {
+        "0.0679": {
+          "budget": 0.0679,
+          "n_escalated": 5590,
+          "residual_under": 0.0225,
+          "dangerous_recall": 0.3102
+        },
+        "0.1500": {
+          "budget": 0.15,
+          "n_escalated": 12350,
+          "residual_under": 0.0153,
+          "dangerous_recall": 0.5322
+        }
+      },
+      "conformal_coverage": 1.0,
+      "mean_set_size": 3.131,
+      "frac_ambiguous_set_ge_2": 0.7983,
+      "alpha": 0.1
+    }
+  }
+}

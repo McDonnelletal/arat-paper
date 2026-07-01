@@ -1,0 +1,62 @@
+{
+  "unsw_nb15": {
+    "dataset": "UNSW-NB15",
+    "n_train": 175341,
+    "n_test": 82332,
+    "svm_train_subsample": 30000,
+    "baseline_rf_knn": {
+      "exact": 0.7935,
+      "under": 0.0218,
+      "adj": 0.9782,
+      "hi_recall": 0.7441,
+      "phi": 0.6117,
+      "disagree_rate": 0.1375
+    },
+    "substitution_rf_svm": {
+      "exact": 0.7292,
+      "under": 0.0154,
+      "adj": 0.9846,
+      "hi_recall": 0.7251,
+      "phi": 0.518,
+      "disagree_rate": 0.2307
+    },
+    "delta": {
+      "exact": -0.0643,
+      "under": -0.0064,
+      "adj": 0.0064,
+      "hi_recall": -0.019,
+      "phi": -0.0937,
+      "disagree_rate": 0.0932
+    }
+  },
+  "diabetes": {
+    "dataset": "Diabetes",
+    "n_train": 81412,
+    "n_test": 20354,
+    "baseline_rf_knn": {
+      "exact": 0.4446,
+      "under": 0.1382,
+      "adj": 0.8618,
+      "hi_recall": 0.2792,
+      "phi": 0.2845,
+      "disagree_rate": 0.4503
+    },
+    "substitution_rf_svm": {
+      "exact": 0.4757,
+      "under": 0.1639,
+      "adj": 0.8361,
+      "hi_recall": 0.1952,
+      "phi": 0.6647,
+      "disagree_rate": 0.238
+    },
+    "delta": {
+      "exact": 0.0311,
+      "under": 0.0257,
+      "adj": -0.0257,
+      "hi_recall": -0.084,
+      "phi": 0.3802,
+      "disagree_rate": -0.2123
+    }
+  },
+  "_note": "Diabetes SVM is trained on the FULL 81k training set (not a subsample); a subsample understates RF/SVM error convergence. Local re-run (sklearn 1.8) reproduces the paper's Diabetes-SVM effect to within SVM library drift: phi 0.283->0.665, disagreement 45.0->23.8%, under-prediction +2.6pp here vs the paper's phi->0.696, 21.4%, +3.1pp (SVM/libsvm results are sensitive to BLAS/library versions). The qualitative result is identical: substituting a convergent SVM for the kNN partner collapses productive disagreement and degrades under-prediction. UNSW-NB15 values are the original-environment results."
+}
